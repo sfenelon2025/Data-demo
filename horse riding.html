@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Horse Riding — Simple Demo Page</title>
+  <style>
+    :root {
+      --bg: #f7fafc;
+      --card: #ffffff;
+      --ink: #1f2937;
+      --ink-soft: #4b5563;
+      --accent: #7c3aed; /* purple */
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    header {
+      padding: 28px 16px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background: radial-gradient(1200px 600px at 50% -10%, #ede9fe 0%, transparent 60%);
+    }
+    header h1 { margin: 10px 0 6px; font-size: clamp(28px, 5vw, 40px); }
+    header p { margin: 0; color: var(--ink-soft); max-width: 680px; }
+
+    .wrap { max-width: 960px; margin: 20px auto; padding: 0 16px 60px; }
+
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 18px 18px;
+      box-shadow: 0 12px 32px rgba(0,0,0,.06);
+      margin-bottom: 16px;
+    }
+
+    h2 { font-size: 22px; margin: 6px 0 12px; }
+    ul { padding-left: 18px; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+
+    .badge {
+      display: inline-block; background: #ede9fe; color: #4c1d95; padding: 6px 10px; border-radius: 999px; font-weight: 700; font-size: 12px;
+    }
+
+    .hero-emoji { font-size: 64px; }
+
+    /* Quiz styles */
+    .quiz label { display: block; margin: 6px 0; }
+    .btn {
+      display: inline-block; border: 0; padding: 10px 14px; border-radius: 12px; font-weight: 700; cursor: pointer; background: var(--accent); color: white;
+    }
+    .btn:active { transform: translateY(1px); }
+    .result { margin-top: 8px; font-weight: 700; }
+
+    footer { text-align: center; padding: 24px; color: var(--ink-soft); }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="hero-emoji" aria-hidden="true">🐎</div>
+    <h1>Horse Riding — Beginner Basics</h1>
+    <p>Learn the essentials: safety gear, mounting, simple cues, and the three basic gaits. This is a lightweight demo page written in plain HTML, CSS, and a pinch of JavaScript.</p>
+    <div style="margin-top:10px"><span class="badge">HTML • CSS • JS</span></div>
+  </header>
+
+  <main class="wrap">
+    <section class="grid">
+      <article class="card">
+        <h2>Safety First</h2>
+        <ul>
+          <li>Wear a certified riding helmet and proper boots with a heel.</li>
+          <li>Check saddle and girth/cinch for a snug, even fit.</li>
+          <li>Keep hands calm and cues light; never wrap reins around your hand.</li>
+          <li>Stay aware of horse ears, eyes, and tail — they signal mood.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Basic Gaits</h2>
+        <ul>
+          <li><strong>Walk</strong> — slow, four‑beat rhythm.</li>
+          <li><strong>Trot</strong> — bouncy two‑beat; post to stay balanced.</li>
+          <li><strong>Canter</strong> — smooth three‑beat; sit deep and relaxed.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Simple Riding Cues</h2>
+        <ul>
+          <li>Go forward: squeeze calves gently, release when the horse moves.</li>
+          <li>Steer: open the rein slightly in the direction you want to go.</li>
+          <li>Stop: sit tall, exhale, close fingers on reins — then soften.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>Mounting Steps</h2>
+      <ol>
+        <li>Check girth/cinch and stirrup length.</li>
+        <li>Stand at the horse’s left shoulder, reins in left hand, right hand on the back of the saddle.</li>
+        <li>Left foot in stirrup, spring up softly, swing right leg over, sit gently.</li>
+        <li>Put right foot in stirrup, adjust posture: ears–shoulders–hips–heels in line.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Try a Quick Quiz</h2>
+      <p class="quiz-intro">Which gait is a <em>two‑beat</em> rhythm?</p>
+      <form class="quiz" id="quiz">
+        <label><input type="radio" name="gait" value="walk"> Walk</label>
+        <label><input type="radio" name="gait" value="trot"> Trot</label>
+        <label><input type="radio" name="gait" value="canter"> Canter</label>
+        <button class="btn" type="submit">Check Answer</button>
+        <div class="result" id="result" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Do & Don’t</h2>
+      <div class="grid">
+        <div>
+          <h3>✅ Do</h3>
+          <ul>
+            <li>Keep heels down and eyes up.</li>
+            <li>Reward often with a soft rein and voice.</li>
+            <li>Practice patience; horses learn from consistency.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>❌ Don’t</h3>
+          <ul>
+            <li>Yank the reins or kick hard.</li>
+            <li>Stand directly behind a horse.</li>
+            <li>Rush mounting or ignore tack checks.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Mini Gallery</h2>
+      <p style="font-size:32px" aria-hidden="true">🐴 🐎 🌾 🐴 🌅 🐎</p>
+      <p class="hint">Emoji only — no images required!</p>
+    </section>
+
+    <section class="card">
+      <h2>Want to Learn More?</h2>
+      <p>Look for a local, certified riding instructor and a barn with well‑fitted tack and school horses. Always ride with supervision when you’re beginning.</p>
+      <p>Demo code: <code>HTML + CSS + JS</code> — perfect for learning how websites work.</p>
+    </section>
+  </main>
+
+  <footer>
+    Made with ❤ for a simple web demo. Stay safe and enjoy the ride!
+  </footer>
+
+  <script>
+    const quiz = document.getElementById('quiz');
+    const result = document.getElementById('result');
+    quiz.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const choice = new FormData(quiz).get('gait');
+      if (!choice) { result.textContent = 'Pick an option!'; return; }
+      if (choice === 'trot') {
+        result.textContent = 'Correct! The trot is a two‑beat gait.';
+        result.style.color = '#065f46';
+      } else {
+        result.textContent = 'Not quite. Try again — hint: it rhymes with “not”.';
+        result.style.color = '#b91c1c';
+      }
+    });
+  </script>
+</body>
+</html>
